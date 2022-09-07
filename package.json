@@ -2,13 +2,19 @@
   "version": "1.0.4",
   "name": "loud-stream-backend",
   "devDependencies": {
-    "bun-types": "latest"
+    "@types/bcryptjs": "^2.4.2",
+    "bun-types": "latest",
+    "nodemon": "^2.0.19"
   },
   "dependencies": {
-    "hono": "^2.0.0"
+    "bcryptjs": "^2.4.3",
+    "hono": "latest",
+    "joi": "^17.6.0",
+    "jsonwebtoken": "^8.5.1"
   },
   "scripts": {
-    "start": "bun run src/index.ts"
+    "start": "bun run src/index.ts",
+    "dev": "bun run nodemon"
   },
   "module": "src/index.js"
 }

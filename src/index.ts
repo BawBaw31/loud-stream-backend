@@ -1,16 +1,15 @@
 import { Hono } from "hono";
+import users from "./routes/usersRoute";
 
 const app = new Hono();
 
-const port = parseInt(process.env.PORT) || 3000;
+app.route("/users", users);
 
-const home = app.get("/", (c) => {
-  return c.json({ message: "Hello World!" });
-});
+const port = parseInt(process.env.PORT) || 3000;
 
 console.log(`Running at http://localhost:${port}`);
 
 export default {
   port,
-  fetch: home.fetch,
+  fetch: app.fetch,
 };
