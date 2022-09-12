@@ -33,10 +33,10 @@ export const updateUser = async (c: Context) => {
   const id = c.req.param("id");
   const body = await c.req.json();
   try {
-    const { name, email, password } = await userSchema.validateAsync(body);
+    const { name, email, role, password } = await userSchema.validateAsync(body);
     const query =
-      "UPDATE users SET name = ?, email = ?, password = ? WHERE id = ?";
-    db.run(query, [name, email, hashPassword(password), id]);
+      "UPDATE users SET name = ?, email = ?, role = ?,password = ? WHERE id = ?";
+    db.run(query, [name, email, role, hashPassword(password), id]);
     return c.json({
       user: { name: name, email: email },
       message: "User updated successfully",
