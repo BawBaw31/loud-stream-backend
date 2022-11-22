@@ -18,7 +18,11 @@ export const login = async (c: Context) => {
     }
     return c.json({
       message: "Logged in successfully",
-      token: createToken(user),
+      token: createToken({
+        id: user.id,
+        email: user.email,
+        role: user.role,
+      }),
     });
   } catch (err) {
     return c.json({ error: err.message }, 400);

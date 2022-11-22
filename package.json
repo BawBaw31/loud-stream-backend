@@ -8,8 +8,10 @@
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "crypto": "^1.0.1",
     "hono": "latest",
     "joi": "^17.6.0",
+    "jose": "^4.9.2",
     "jsonwebtoken": "^8.5.1"
   },
   "scripts": {
